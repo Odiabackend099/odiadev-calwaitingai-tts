@@ -1,0 +1,3 @@
+TTS Request: Hello world
+Speaker: male
+Status: TTS service starting up...

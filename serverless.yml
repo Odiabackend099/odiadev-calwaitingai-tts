@@ -1,0 +1,18 @@
+service: callwaiting-tts
+provider:
+  name: aws
+  runtime: python3.9
+  region: us-east-1
+  stage: prod
+functions:
+  api:
+    handler: server.app
+    events:
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
+    environment:
+      FLASK_ENV: production
+    timeout: 30
+    memorySize: 512
